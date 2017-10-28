@@ -1,5 +1,4 @@
 #include "chuckNorrisEncoder.h"
-#include "iostream"
 
 string chuckNorrisEncoder::encode(string toEncode)
 {
