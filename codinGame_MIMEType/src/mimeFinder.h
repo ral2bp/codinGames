@@ -8,11 +8,20 @@ using namespace std;
 
 class mimeFinder {
 public:
-	mimeFinder(map<string,string> dictToUse) : dictionary(dictToUse){}
-	string findMimeType(string filename);
+    mimeFinder()
+    {
+
+    }
+
+    mimeFinder(map<string,string> dictToUse) : dictionary(dictToUse)
+    {
+
+    }
+    string findMimeType(string filename);
 
 private:
-	map<string, string> dictionary;
+    string getExtension(string fileName);
+    map<string, string> dictionary;
 };
 
 #endif /* SRC_MIMEFINDER_H_ */
