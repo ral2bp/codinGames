@@ -20,9 +20,9 @@ string mimeFinder::findMimeType(string fileName)
 
 string mimeFinder::getExtension(string fileName)
 {
-    unsigned int extensionStart = fileName.find_last_of(".");
+    std::size_t extensionStart = fileName.find_last_of(".");
 
-    if (extensionStart == string::npos || extensionStart == 0)
+    if (extensionStart == string::npos)
         return "";
     else
         return fileName.substr(extensionStart + 1);

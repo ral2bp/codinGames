@@ -28,7 +28,7 @@ TEST_F(mimeTypeTests, givenProperFileNameReturnsExtension)
 
 TEST_F(mimeTypeTests, givenOnlyExtensionReturnsEmpty)
 {
-    ASSERT_EQ("", testFinder.getExtension(".png"));
+    ASSERT_EQ("png", testFinder.getExtension(".png"));
 }
 
 TEST_F(mimeTypeTests, givenOnlyExtensionWithoutDotReturnsEmpty)
@@ -79,7 +79,7 @@ TEST_F(mimeTypeTests, codinGameTest3)
     ASSERT_EQ("UNKNOWN", uniqueTestFinder.findMimeType("b.wav.tmp"));
     ASSERT_EQ("UNKNOWN", uniqueTestFinder.findMimeType("test.vmp3"));
     ASSERT_EQ("UNKNOWN", uniqueTestFinder.findMimeType("pdf"));
-    ASSERT_EQ("UNKNOWN", uniqueTestFinder.findMimeType(".pdf"));
+    ASSERT_EQ("application/pdf", uniqueTestFinder.findMimeType(".pdf"));
     ASSERT_EQ("UNKNOWN", uniqueTestFinder.findMimeType("mp3"));
     ASSERT_EQ("application/pdf", uniqueTestFinder.findMimeType("report..pdf"));
     ASSERT_EQ("UNKNOWN", uniqueTestFinder.findMimeType("defaultwav"));
