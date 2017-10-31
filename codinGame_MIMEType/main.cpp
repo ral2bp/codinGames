@@ -11,10 +11,10 @@ using namespace std;
 int main(int argc, char **argv)
 {
 /*
-    int assiciationTableSize; // Number of elements which make up the association table.
+    int assiciationTableSize;
     cin >> assiciationTableSize;
     cin.ignore();
-    int fileNamesToBeAnalyzed; // Number Q of file names to be analyzed.
+    int fileNamesToBeAnalyzed;
     cin >> fileNamesToBeAnalyzed;
     cin.ignore();
 
@@ -22,12 +22,11 @@ int main(int argc, char **argv)
 
     for (int i = 0; i < assiciationTableSize; i++)
     {
-        string fileExtension; // file extension
-        string mimeType; // MIME type.
+        string fileExtension;
+        string mimeType;
         cin >> fileExtension >> mimeType;
         cin.ignore();
-        if (fileExtension.length() <= 10 && mimeType.length() <= 50)
-            extensionMimePairs[fileExtension] = mimeType;
+        extensionMimePairs[fileExtension] = mimeType;
     }
 
     mimeFinder finder = mimeFinder(extensionMimePairs);
@@ -35,13 +34,10 @@ int main(int argc, char **argv)
     vector<string> result;
     for (int i = 0; i < fileNamesToBeAnalyzed; i++)
     {
-        string fileName; // One file name per line.
+        string fileName;
         getline(cin, fileName);
         result.push_back(finder.findMimeType(fileName));
     }
-
-    // Write an action using cout. DON'T FORGET THE "<< endl"
-    // To debug: cerr << "Debug messages..." << endl;
 
     for (auto item : result)
         cout << item << endl;

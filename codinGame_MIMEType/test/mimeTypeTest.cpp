@@ -39,10 +39,10 @@ TEST_F(mimeTypeTests, givenOnlyExtensionWithoutDotReturnsEmpty)
 TEST_F(mimeTypeTests, givenDictionaryHasCorrectDictionary)
 {
     map<string, string> testDictionary = map<string, string>();
-   testDictionary["png"] = "image/png";
-   mimeFinder uniqueTestFinder = mimeFinder(testDictionary);
-   ASSERT_EQ(1u, uniqueTestFinder.dictionary.size());
-   ASSERT_EQ( "image/png", uniqueTestFinder.dictionary["png"]);
+    testDictionary["png"] = "image/png";
+    mimeFinder uniqueTestFinder = mimeFinder(testDictionary);
+    ASSERT_EQ(1u, uniqueTestFinder.dictionary.size());
+    ASSERT_EQ("image/png", uniqueTestFinder.dictionary["png"]);
 }
 
 TEST_F(mimeTypeTests, givenNonEmptyMapReturnsMimeTypeInMap)
@@ -72,7 +72,7 @@ TEST_F(mimeTypeTests, codinGameTest3)
     testDictionary["mp3"] = "audio/mpeg";
     testDictionary["pdf"] = "application/pdf";
 
-   mimeFinder uniqueTestFinder = mimeFinder(testDictionary);
+    mimeFinder uniqueTestFinder = mimeFinder(testDictionary);
 
     ASSERT_EQ("UNKNOWN", uniqueTestFinder.findMimeType("a"));
     ASSERT_EQ("audio/x-wav", uniqueTestFinder.findMimeType("a.wav"));

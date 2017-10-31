@@ -3,20 +3,20 @@
 
 #include <string>
 #include <map>
+#include <algorithm>
 
 using namespace std;
 
-class mimeFinder {
+class mimeFinder
+{
 public:
     mimeFinder()
     {
 
     }
 
-    mimeFinder(map<string,string> dictToUse) : dictionary(dictToUse)
-    {
+    mimeFinder(map<string, string> dictToUse);
 
-    }
     string findMimeType(string filename);
 
 private:
